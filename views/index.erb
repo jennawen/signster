@@ -1,0 +1,22 @@
+
+<h1>Signster</h1>
+
+<p>&nbsp;</p>
+
+<% if !logged_in? %>
+<form id="form-login" action="/login" method="post">
+  <label for="username">username:<input type="input" name="username" /></label><br />
+  <label for="pass">password:<input type="password" name="password" /></label><br />
+  <input type="submit" value="login"></input>
+</form>
+<p><a href="/users/new">Create a new Account</a></p>
+
+<% else %>
+
+<p>Logged in as: <%= @user.username %></p>
+<form id='form-logout' action='/logout' method='post'>
+  <input type='submit' value='logout'></input>
+</form>
+
+<% end %>
+
